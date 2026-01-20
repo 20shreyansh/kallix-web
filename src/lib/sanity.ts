@@ -1,5 +1,5 @@
 import { createClient } from "@sanity/client";
-import imageUrlBuilder from "@sanity/image-url";
+import { createImageUrlBuilder } from "@sanity/image-url";
 
 export const client = createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "royu0arj",
@@ -8,7 +8,7 @@ export const client = createClient({
     useCdn: true, // Set to false if you need the freshest data
 });
 
-const builder = imageUrlBuilder(client);
+const builder = createImageUrlBuilder(client);
 
 export function urlFor(source: { _type: string; asset: { _ref: string } }) {
     return builder.image(source);
