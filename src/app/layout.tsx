@@ -11,6 +11,8 @@ const poppins = Poppins({
   display: "swap",
 });
 
+const value = "1234567890";
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
